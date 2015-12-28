@@ -123,7 +123,7 @@ document.addEventListener('mousemove', function(event) {
 		dy_element.style.background = negColor;
 	}
 
-	derivativeValue = scaledFormula(derivativeFormula, x);
+	var derivativeValue = scaledFormula(derivativeFormula, x);
 
 	// change styling of highlighted area according to dy/dx being positive/negative (<120 with scaling)
 	if (derivativeValue < 120) {
