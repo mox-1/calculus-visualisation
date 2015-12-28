@@ -1,0 +1,51 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<h1>Visualising Integrals of Derivatives</h1>
+	<div class = 'explanation'>
+		<div class = 'toggle-display'>SHOW/HIDE</div>
+		<div class='content'>
+			<p>In general, </p>
+			<img src="eqn1.png">
+			<p>But, as b approaches a...</p>
+			<img src="eqn2.png">
+			<p>Or, if we let y = f(x)</p>
+			<img src="eqn3.png">
+			<p>Alternatively, observe that the highlighted <span>length</span> in the top diagram approximates the magnitude of the highlighted <span>area</span> in the bottom diagram when &#916x is small. The smaller &#916x is, the better the approximation.
+			</p>
+		</div>
+	</div>
+	<div class="canvas-wrap">
+		<img src="label2.png" class="label">
+		<canvas class="original" width="800" height="300"></canvas>
+		<div class="pointer"></div>
+		<div class="pointer2"></div>
+		<div class="dt"></div>
+		<div class="dy"></div>
+		<p class="delta_x">&#916x</p>
+	</div>
+	<div class="canvas-wrap">
+		<img src="label1.png" class="label">
+		<canvas class="derivative" width="800" height="300"></canvas>
+		<div class="fill"></div>
+	</div>
+</body>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript">
+	var toggle = document.querySelector('.toggle-display');
+	var clicked = false;
+	toggle.addEventListener('click', function() {
+		var explanation = document.querySelector('.content');
+		if(clicked) {
+			explanation.style.height = 0;
+		}
+		else {
+			explanation.style.height = 500;
+		}
+		clicked = !clicked;
+	})
+</script>
+</html>
